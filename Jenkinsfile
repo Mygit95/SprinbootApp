@@ -2,16 +2,16 @@ pipeline
 {
     agent any
 
-    stages
-    {
-        stage('Build')
+       stage('Build')
         {
-            steps
-            {
-                sh 'mvn clean install'
-                echo 'Build Successful'
-            }
-        }
+           steps {
+               script {
+                   def mvnHome = tool 'Maven'
+                   sh "${mvnHome}/bin/mvn clean install"
+                   echo 'Build Successful'
+               }
+           }
+       }
 
         stage('Test')
         {
