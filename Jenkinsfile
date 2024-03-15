@@ -8,7 +8,7 @@ pipeline
         {
             steps
             {
-                sh 'clean install'
+                sh 'mvn clean install'
                 echo 'Build Successful'
             }
         }
