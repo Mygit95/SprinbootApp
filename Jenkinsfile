@@ -8,7 +8,8 @@ pipeline
         {
             steps
             {
-                echo 'Build App'
+                sh 'mvn clean install'
+                echo 'Build Successful'
             }
         }
 
